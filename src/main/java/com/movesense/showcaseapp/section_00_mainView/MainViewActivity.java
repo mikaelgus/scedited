@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import com.movesense.showcaseapp.section_01_movesense.MovesenseActivity;
 import com.movesense.showcaseapp.section_02_multi_connection.connection.MultiConnectionActivity;
 import com.movesense.showcaseapp.section_03_dfu.DfuActivity2;
 import com.movesense.showcaseapp.section_07_instructions.InstructionsActivity;
+import com.movesense.showcaseapp.section_08_info.InfoActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +24,8 @@ import butterknife.OnClick;
 public class MainViewActivity extends AppCompatActivity {
 
     private final String TAG = MainViewActivity.class.getSimpleName();
+
+    @BindView(R.id.mainView_info_button) ImageView mMainViewInfo;
 
     @BindView(R.id.mainView_movesense_Ll) RelativeLayout mMainViewMovesenseLl;
 
@@ -49,7 +53,7 @@ public class MainViewActivity extends AppCompatActivity {
 
     }
 
-    @OnClick({R.id.mainView_movesense_Ll, R.id.mainView_instructions, R.id.mainView_dfu_Ll, R.id.mainView_savedData_Ll})
+    @OnClick({R.id.mainView_movesense_Ll, R.id.mainView_instructions, R.id.mainView_dfu_Ll, R.id.mainView_savedData_Ll, R.id.mainView_info_button})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.mainView_movesense_Ll:
@@ -63,6 +67,9 @@ public class MainViewActivity extends AppCompatActivity {
                 break;
             case R.id.mainView_savedData_Ll:
                 startActivity(new Intent(MainViewActivity.this, SendLogsToGoogleDriveActivity.class));
+                break;
+            case R.id.mainView_info_button:
+                startActivity(new Intent(MainViewActivity.this, InfoActivity.class));
                 break;
         }
     }

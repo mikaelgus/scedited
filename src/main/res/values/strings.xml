@@ -83,4 +83,6 @@
     <string name="mittaustulokset">Mittaustulokset</string>
     <string name="uniapnea">Uniapnea</string>
     <string name="lis_tietoa_uniapneasta">Lisätietoa uniapneasta</string>
+    <string name="sentraalinen_uniapnea">Sentraalinen uniapnea</string>
+    <string name="obstruktiivinen_uniapnea">Obstruktiivinen uniapnea</string>
 </resources>

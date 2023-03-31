@@ -54,6 +54,9 @@
         <activity
             android:name=".section_07_instructions.InstructionsActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".section_08_info.InfoActivity"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
