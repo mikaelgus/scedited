@@ -13,6 +13,7 @@ import com.movesense.showcaseapp.google_drive.SendLogsToGoogleDriveActivity;
 import com.movesense.showcaseapp.section_01_movesense.MovesenseActivity;
 import com.movesense.showcaseapp.section_02_multi_connection.connection.MultiConnectionActivity;
 import com.movesense.showcaseapp.section_03_dfu.DfuActivity2;
+import com.movesense.showcaseapp.section_07_instructions.InstructionsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -23,11 +24,15 @@ public class MainViewActivity extends AppCompatActivity {
     private final String TAG = MainViewActivity.class.getSimpleName();
 
     @BindView(R.id.mainView_movesense_Ll) RelativeLayout mMainViewMovesenseLl;
-    @BindView(R.id.mainView_multiConnection_Ll) RelativeLayout mMainViewMultiConnectionLl;
+
+    //@BindView(R.id.mainView_multiConnection_Ll) RelativeLayout mMainViewMultiConnectionLl;
+
+    @BindView(R.id.mainView_instructions) RelativeLayout mMainViewInstructions;
+
     @BindView(R.id.mainView_dfu_Ll) RelativeLayout mMainViewDfuLl;
     @BindView(R.id.mainView_savedData_Ll) RelativeLayout mMainViewSavedDataLl;
-    @BindView(R.id.mainView_appVersion_tv) TextView mMainViewAppVersionTv;
-    @BindView(R.id.mainView_libraryVersion_tv) TextView mMainViewLibraryVersionTv;
+    //@BindView(R.id.mainView_appVersion_tv) TextView mMainViewAppVersionTv;
+    //@BindView(R.id.mainView_libraryVersion_tv) TextView mMainViewLibraryVersionTv;
 
 
     @Override
@@ -39,19 +44,19 @@ public class MainViewActivity extends AppCompatActivity {
         String versionName = BuildConfig.VERSION_NAME;
         String libraryVersion = BuildConfig.MDS_VERSION;
 
-        mMainViewAppVersionTv.setText(getString(R.string.application_version, versionName));
-        mMainViewLibraryVersionTv.setText(getString(R.string.library_version, libraryVersion));
+        //mMainViewAppVersionTv.setText(getString(R.string.application_version, versionName));
+        //mMainViewLibraryVersionTv.setText(getString(R.string.library_version, libraryVersion));
 
     }
 
-    @OnClick({R.id.mainView_movesense_Ll, R.id.mainView_multiConnection_Ll, R.id.mainView_dfu_Ll, R.id.mainView_savedData_Ll})
+    @OnClick({R.id.mainView_movesense_Ll, R.id.mainView_instructions, R.id.mainView_dfu_Ll, R.id.mainView_savedData_Ll})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.mainView_movesense_Ll:
                 startActivity(new Intent(MainViewActivity.this, MovesenseActivity.class));
                 break;
-            case R.id.mainView_multiConnection_Ll:
-                startActivity(new Intent(MainViewActivity.this, MultiConnectionActivity.class));
+            case R.id.mainView_instructions:
+                startActivity(new Intent(MainViewActivity.this, InstructionsActivity.class));
                 break;
             case R.id.mainView_dfu_Ll:
                 startActivity(new Intent(MainViewActivity.this, DfuActivity2.class));

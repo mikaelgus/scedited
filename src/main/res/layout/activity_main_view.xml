@@ -1,176 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="#1D8CC6D8"
+    android:orientation="vertical"
     android:padding="8dp">
 
+    <!--Yläpalkki-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/mainView_info_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_info_24" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Etusivu"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!--Main-view-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:paddingTop="200dp">
 
-        <!--1-->
-        <LinearLayout
-            android:id="@+id/mainView_ll1"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/mainView_card_height"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <RelativeLayout
-                android:id="@+id/mainView_movesense_Ll"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@color/colorMainViewCardBackground"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/mainView_movesense_text"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/flash_circle"/>
-
-                <TextView
-                    android:id="@+id/mainView_movesense_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:background="#3d545252"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:text="Movesense"
-                    android:textColor="@color/colorText"
-                    android:textSize="16sp"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/mainView_multiConnection_Ll"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@color/colorMainViewCardBackground"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/mainView_multiConnection_text"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/google_circles"/>
-
-
-                <TextView
-                    android:id="@+id/mainView_multiConnection_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:background="#3d545252"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:text="Multi Connection"
-                    android:textColor="@color/colorText"
-                    android:textSize="16sp"/>
-
-            </RelativeLayout>
-        </LinearLayout>
-
-        <!--2-->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/mainView_card_height"
-            android:orientation="horizontal"
-            android:weightSum="2">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <RelativeLayout
-                android:id="@+id/mainView_dfu_Ll"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@color/colorMainViewCardBackground"
-                android:gravity="center">
+            <!--1-->
+            <LinearLayout
+                android:id="@+id/mainView_ll1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mainView_card_height"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <ImageView
-                    android:layout_above="@id/mainView_dfu_text"
-                    android:layout_width="match_parent"
+                <!--Yhdistä anturi-nappi-->
+                <RelativeLayout
+                    android:id="@+id/mainView_movesense_Ll"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/ic_dfu_feature"/>
-
-                <TextView
-                    android:id="@+id/mainView_dfu_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:background="#3d545252"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rounded_background"
                     android:gravity="center"
-                    android:padding="6dp"
-                    android:text="DFU"
-                    android:textColor="@color/colorText"
-                    android:textSize="16sp"/>
+                    android:padding="5dp">
 
-            </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/mainView_movesense_text"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/baseline_bluetooth_connected_24" />
 
-            <RelativeLayout
-                android:id="@+id/mainView_savedData_Ll"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@color/colorMainViewCardBackground"
-                android:gravity="center">
+                    <TextView
+                        android:id="@+id/mainView_movesense_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="Yhdistä anturi"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-                <ImageView
-                    android:scaleType="fitCenter"
-                    android:layout_width="match_parent"
+                </RelativeLayout>
+
+                <!--Ohejeet-nappi-->
+                <RelativeLayout
+                    android:id="@+id/mainView_instructions"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_above="@id/mainView_savedData_text"
-                    android:src="@drawable/baseline_poll_24"/>
-
-                <TextView
-                    android:id="@+id/mainView_savedData_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:background="#3d545252"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rounded_background"
                     android:gravity="center"
-                    android:padding="6dp"
-                    android:text="@string/Saved_Data"
-                    android:textColor="@color/colorText"
-                    android:textSize="16sp"/>
+                    android:padding="5dp">
 
-            </RelativeLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/mainView_Instructions_text"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/baseline_question_mark_24" />
+
+                    <TextView
+                        android:id="@+id/mainView_Instructions_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="Ohjeet"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!--2-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mainView_card_height"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!--Käynnistä mittaus-nappi-->
+                <RelativeLayout
+                    android:id="@+id/mainView_dfu_Ll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rounded_background"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/mainView_dfu_text"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/baseline_info_24" />
+
+                    <TextView
+                        android:id="@+id/mainView_dfu_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="DFU"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <!--Mittaustulokset-nappi-->
+                <RelativeLayout
+                    android:id="@+id/mainView_savedData_Ll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rounded_background"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/mainView_savedData_text"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/baseline_insert_chart_outlined_24" />
+
+                    <TextView
+                        android:id="@+id/mainView_savedData_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="Mittaustulokset"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
+    <!--
     <TextView
         android:id="@+id/mainView_libraryVersion_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:text="@string/library_version"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
@@ -179,7 +219,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:text="@string/application_version"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@id/mainView_libraryVersion_tv"/>
+        -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
