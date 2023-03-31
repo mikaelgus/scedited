@@ -76,4 +76,11 @@
     <string name="bpm">Beat interval [bpm]:</string>
     <string name="heart_rate">Heart rate:</string>
     <string name="beat_interval">Beat interval:</string>
+    <string name="info">info</string>
+    <string name="etusivu">Etusivu</string>
+    <string name="yhdist_anturi">Yhdistä anturi</string>
+    <string name="Ohjeet">Ohjeet</string>
+    <string name="mittaustulokset">Mittaustulokset</string>
+    <string name="uniapnea">Uniapnea</string>
+    <string name="lis_tietoa_uniapneasta">Lisätietoa uniapneasta</string>
 </resources>

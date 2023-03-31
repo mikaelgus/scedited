@@ -18,13 +18,14 @@
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:padding="10dp"
-            android:src="@drawable/baseline_arrow_back_24" />
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="backbutton"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Ohjeet"
+            android:text="@string/Ohjeet"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -222,7 +223,7 @@ Säädä vyötä niin, että se istuu tiukemmin rintakehää vasten. Varmista, e
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/black"
-                    android:text="Uniapnea"
+                    android:text="@string/uniapnea"
                     android:textStyle="bold"
                     android:textSize="18sp"/>
 
@@ -244,7 +245,7 @@ Säädä vyötä niin, että se istuu tiukemmin rintakehää vasten. Varmista, e
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Lisätietoa uniapneasta"
+                        android:text="@string/lis_tietoa_uniapneasta"
                         android:textColor="@android:color/black"
                         android:textStyle="bold"
                         android:layout_toEndOf="@id/infoicon"/>

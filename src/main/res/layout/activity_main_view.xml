@@ -18,13 +18,14 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:padding="10dp"
-            android:src="@drawable/baseline_info_24" />
+            android:src="@drawable/baseline_info_24"
+            android:contentDescription="@string/info"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Etusivu"
+            android:text="@string/etusivu"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -81,7 +82,7 @@
                         android:layout_alignParentBottom="true"
                         android:gravity="center"
                         android:padding="6dp"
-                        android:text="Yhdistä anturi"
+                        android:text="@string/yhdist_anturi"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -104,7 +105,7 @@
                         android:layout_height="match_parent"
                         android:layout_above="@id/mainView_Instructions_text"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/baseline_question_mark_24" />
+                        android:src="@drawable/baseline_question_mark_24"/>
 
                     <TextView
                         android:id="@+id/mainView_Instructions_text"
@@ -115,7 +116,7 @@
                         android:layout_alignParentBottom="true"
                         android:gravity="center"
                         android:padding="6dp"
-                        android:text="Ohjeet"
+                        android:text="@string/Ohjeet"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -193,7 +194,7 @@
                         android:layout_alignParentBottom="true"
                         android:gravity="center"
                         android:padding="6dp"
-                        android:text="Mittaustulokset"
+                        android:text="@string/mittaustulokset"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
