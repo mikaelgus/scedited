@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/mainView_info_button"
             android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:padding="10dp"
             android:src="@drawable/baseline_info_24"
             android:contentDescription="@string/info"/>
@@ -38,7 +38,7 @@
         android:layout_height="match_parent"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
-        android:paddingTop="200dp">
+        android:paddingTop="180dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -131,9 +131,9 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <!--Käynnistä mittaus-nappi-->
+                <!--TODO Käynnistä mittaus-nappi???-->
                 <RelativeLayout
-                    android:id="@+id/mainView_dfu_Ll"
+                    android:id="@+id/mainView_start_measurement"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
@@ -145,14 +145,14 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_above="@id/mainView_dfu_text"
+                        android:layout_above="@id/mainView_start_measurement_text"
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/baseline_info_24" />
+                        android:src="@drawable/baseline_monitor_heart_24" />
 
                     <TextView
-                        android:id="@+id/mainView_dfu_text"
+                        android:id="@+id/mainView_start_measurement_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
@@ -160,7 +160,7 @@
                         android:layout_alignParentBottom="true"
                         android:gravity="center"
                         android:padding="6dp"
-                        android:text="DFU"
+                        android:text="Käynnistä mittaus"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -200,6 +200,63 @@
                         android:textStyle="bold" />
 
                 </RelativeLayout>
+            </LinearLayout>
+
+            <!--3-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/mainView_card_height"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <!--Multiconnect-nappi-->
+                <RelativeLayout
+                    android:id="@+id/mainView_multiConnection_Ll"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rounded_background"
+                    android:gravity="center"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@id/mainView_multiConnection_text"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/baseline_leak_add_24" />
+
+                    <TextView
+                        android:id="@+id/mainView_multiConnection_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="Multiconnection"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <!--Näkymätön-nappi-->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rounded_background"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone">
+                </RelativeLayout>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

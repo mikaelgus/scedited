@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,10 @@ import com.movesense.showcaseapp.model.MdsConnectedDevice;
 import com.movesense.showcaseapp.model.MdsDeviceInfoNewSw;
 import com.movesense.showcaseapp.model.MdsDeviceInfoOldSw;
 import com.movesense.showcaseapp.model.RxBleDeviceWrapper;
+import com.movesense.showcaseapp.section_00_mainView.MainViewActivity;
 import com.movesense.showcaseapp.section_01_movesense.sensors.sensors_list.SensorListActivity;
+import com.movesense.showcaseapp.section_07_instructions.InstructionsActivity;
+import com.movesense.showcaseapp.section_08_info.InfoActivity;
 import com.movesense.showcaseapp.utils.ThrowableToastingAction;
 import com.polidea.rxandroidble2.RxBleDevice;
 import com.polidea.rxandroidble2.RxBleScanResult;
@@ -42,14 +46,17 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.functions.Consumer;
 
 public class MovesenseActivity extends AppCompatActivity implements MovesenseContract.View, View.OnClickListener {
 
+    @BindView(R.id.connection_back_button) ImageView connection;
+
     @BindView(R.id.movesense_recyclerView) RecyclerView mMovesenseRecyclerView;
-    @BindView(R.id.movesense_infoTv) TextView mMovesenseInfoTv;
+    //@BindView(R.id.movesense_infoTv) TextView mMovesenseInfoTv;
     @BindView(R.id.movesense_progressBar) ProgressBar mMovesenseProgressBar;
 
     private static final int MY_PERMISSIONS_REQUEST_LOCATION = 98;
@@ -68,9 +75,10 @@ public class MovesenseActivity extends AppCompatActivity implements MovesenseCon
         setContentView(R.layout.activity_movesense);
         ButterKnife.bind(this);
 
+        /*
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Movesense Connection");
-        }
+        }*/
 
         scanningSubscriptions = new CompositeDisposable();
         connectedDevicesSubscriptions = new CompositeDisposable();
@@ -317,5 +325,14 @@ public class MovesenseActivity extends AppCompatActivity implements MovesenseCon
         mMovesensePresenter.onDestroy();
         connectedDevicesSubscriptions.dispose();
         scanningSubscriptions.dispose();
+    }
+
+    @OnClick({R.id.connection_back_button})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.connection_back_button:
+                startActivity(new Intent(MovesenseActivity.this, MainViewActivity.class));
+                break;
+        }
     }
 }

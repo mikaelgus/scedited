@@ -18,9 +18,9 @@ import butterknife.OnClick;
 
 public class InstructionsActivity extends AppCompatActivity {
 
-    @BindView(R.id.instructions_back_button) ImageView Instructions;
+    @BindView(R.id.instructions_back_button) ImageView instructions;
 
-    @BindView(R.id.instructions_info_button) RelativeLayout Info;
+    @BindView(R.id.instructions_info_button) RelativeLayout info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

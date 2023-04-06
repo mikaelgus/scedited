@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/colorBackground"
-                android:orientation="vertical"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:background="@drawable/white_rounded_background"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
 
     <ImageView
         android:id="@+id/movesense_image"
@@ -21,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/movesense_address"
         android:layout_alignTop="@+id/movesense_image"
-        android:textColor="@color/colorText"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         tools:text="@string/Movesense"/>
 
@@ -33,7 +34,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:layout_toRightOf="@id/movesense_image"
-        android:textColor="@color/colorText"
+        android:textColor="@android:color/black"
         tools:text="21:21:34:21"/>
 
     <TextView
@@ -44,7 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp"
         android:layout_toRightOf="@id/movesense_image"
-        android:textColor="@color/colorText"
+        android:textColor="@android:color/black"
         tools:text="40"/>
 
     <View
