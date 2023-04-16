@@ -44,9 +44,9 @@ import io.reactivex.disposables.CompositeDisposable;
 public class SensorListActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.sensorList_recyclerView) RecyclerView mSensorListRecyclerView;
-    @BindView(R.id.sensorList_deviceInfo_title_tv) TextView mSensorListDeviceInfoTitleTv;
-    @BindView(R.id.sensorList_deviceInfo_serial_tv) TextView mSensorListDeviceInfoSerialTv;
-    @BindView(R.id.sensorList_deviceInfo_sw_tv) TextView mSensorListDeviceInfoSwTv;
+    //@BindView(R.id.sensorList_deviceInfo_title_tv) TextView mSensorListDeviceInfoTitleTv;
+    //@BindView(R.id.sensorList_deviceInfo_serial_tv) TextView mSensorListDeviceInfoSerialTv;
+    //@BindView(R.id.sensorList_deviceInfo_sw_tv) TextView mSensorListDeviceInfoSwTv;
 
     private CompositeDisposable subscriptions;
 
@@ -66,18 +66,18 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
 
         ArrayList<SensorListItemModel> sensorListItemModels = new ArrayList<>();
 
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.app_info_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.linear_acceleration_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.led_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.temperature_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.heart_rate_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.app_info_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.linear_acceleration_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.led_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.temperature_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.heart_rate_name)));
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.angular_velocity_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.magnetic_field_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.multi_subscription_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.ecg)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.magnetic_field_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.multi_subscription_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.ecg)));
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.battery_energy)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.imu_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.Memory_Diagnostic)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.imu_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.Memory_Diagnostic)));
 
         SensorsListAdapter sensorsListAdapter = new SensorsListAdapter(sensorListItemModels, this);
         mSensorListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -110,8 +110,8 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
     protected void onResume() {
         super.onResume();
 
-        mSensorListDeviceInfoSerialTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
-        mSensorListDeviceInfoSwTv.setText("Sw version: " + MovesenseConnectedDevices.getConnectedDevice(0).getSwVersion());
+        //mSensorListDeviceInfoSerialTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
+        //mSensorListDeviceInfoSwTv.setText("Sw version: " + MovesenseConnectedDevices.getConnectedDevice(0).getSwVersion());
 
         subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
                 .subscribe(new Consumer<MdsConnectedDevice>() {

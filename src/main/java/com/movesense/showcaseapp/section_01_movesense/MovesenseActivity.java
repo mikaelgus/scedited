@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.movesense.mds.Mds;
 import com.movesense.mds.internal.connectivity.MovesenseConnectedDevices;
 import com.movesense.mds.internal.connectivity.MovesenseDevice;
@@ -54,6 +55,8 @@ import io.reactivex.functions.Consumer;
 public class MovesenseActivity extends AppCompatActivity implements MovesenseContract.View, View.OnClickListener {
 
     @BindView(R.id.connection_back_button) ImageView connection;
+
+    @BindView(R.id.instructions_fab) FloatingActionButton fab;
 
     @BindView(R.id.movesense_recyclerView) RecyclerView mMovesenseRecyclerView;
     //@BindView(R.id.movesense_infoTv) TextView mMovesenseInfoTv;
@@ -327,11 +330,14 @@ public class MovesenseActivity extends AppCompatActivity implements MovesenseCon
         scanningSubscriptions.dispose();
     }
 
-    @OnClick({R.id.connection_back_button})
+    @OnClick({R.id.connection_back_button, R.id.instructions_fab})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.connection_back_button:
                 startActivity(new Intent(MovesenseActivity.this, MainViewActivity.class));
+                break;
+            case R.id.instructions_fab:
+                startActivity(new Intent(MovesenseActivity.this, InstructionsActivity.class));
                 break;
         }
     }

@@ -13,12 +13,12 @@
     <string name="temperature_name">Temperature</string>
     <string name="led_name">Led</string>
     <string name="multi_subscription_name">Multi Subscription</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="please_wait">Please Wait...</string>
-    <string name="please_wait_connecting">Connecting may take 10-30s \nPlease Wait...</string>
-    <string name="connecting">Connecting</string>
-    <string name="loading_information">Loading information...</string>
+    <string name="yes">Kyllä</string>
+    <string name="no">Ei</string>
+    <string name="please_wait">Odota hetki...</string>
+    <string name="please_wait_connecting">Yhdistäminen voi kestää 10-30s \n Odota hetki...</string>
+    <string name="connecting">Yhdistetään</string>
+    <string name="loading_information">Ladataan tietoja...</string>
     <string name="kelvin">kelvin:</string>
     <string name="celsius">celsius:</string>
     <string name="rate">Rate:</string>
@@ -56,7 +56,7 @@
     <string name="dfu_zip_sw_version">DFU zip Sw Version: </string>
     <string name="movesense_sw_version_device_must_be_connected">Movesense Sw Version: Device must be connected</string>
     <string name="select_file_and_device">Select File and Device</string>
-    <string name="disconnect_dialog_text">Leaving from this view will disconnect You with device. Are You sure want leave?</string>
+    <string name="disconnect_dialog_text">Tästä näkymästä poistuminen katkaisee yhteyden laitteeseen. Haluatko varmasti lähteä?</string>
     <string name="application_version">Application Version: %s</string>
     <string name="library_version">Library Version: %s</string>
     <string name="energy_value_to_low_for_update">Energy value is to low for update</string>
@@ -66,7 +66,7 @@
     <string name="note_text">Important Note:\n  On some phones Subscripton with rate higher than 104 Hz can cause Bluetooth connection problem and restart app might be required.</string>
     <string name="multisubscribe_note_text">Important Note:\n  On some phones Subscribing 3(and more) sensors can cause Bluetooth connection problem and restart app might be required.</string>
     <string name="app_info_name">App Info</string>
-    <string name="exit">Exit</string>
+    <string name="exit">Olet katkaisemassa yhteyden</string>
     <string name="imu_name">Imu</string>
     <string name="Memory_Diagnostic">Memory Diagnostic</string>
 
