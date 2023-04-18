@@ -11,11 +11,17 @@
         android:id="@+id/resultTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tässä näkyy mittaukset CSV-tiedostoina"/>
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:text="Suoritetut mittaukset"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp" />
 
     <ListView
         android:id="@+id/logsFileListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
 
 </LinearLayout>

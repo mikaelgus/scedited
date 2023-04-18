@@ -6,9 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".testfolder.MPchart">
 
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:id="@+id/barchart" />
+
     <com.github.mikephil.charting.charts.LineChart
         android:layout_width="match_parent"
         android:layout_height="400px"
-        android:id="@+id/linechart" />
+        android:layout_below="@id/barchart"
+        android:id="@+id/angularcharty" />
 
+    <TextView
+        android:id="@+id/textViewCounter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/angularcharty"
+
+        android:text="Laskuri" />
+    <TextView
+        android:id="@+id/textViewAHI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/textViewCounter"
+        android:text="AHI arvo" />
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/textViewAHI"
+        android:text="Tulokset" />
+    <TextView
+        android:id="@+id/textViewNotMedical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/textViewResult"
+        android:text="Viite" />
+
+    ´
 </RelativeLayout>

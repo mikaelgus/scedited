@@ -113,10 +113,10 @@ public class HeartRateTestActivity extends BaseActivity implements BleManager.IB
                                 mHeartRateBpmValueTextView.setText(String.format(Locale.getDefault(),
                                         "Beat interval [bpm]: %.2f", heartRate.body.average));
 
-                                mCsvLogger.appendHeader("Timestamp,HR: (Beats per minute), RR: (ms)");
+                                mCsvLogger.appendHeader("Service, Timestamp,HR: (Beats per minute), RR: (ms)");
 
                                 mCsvLogger.appendLine(String.format(Locale.getDefault(),
-                                        "%d,%.2f,%d", timestamp,heartRate.body.average, heartRate.body.rrData[0]));
+                                        "HeartRate,%d,%.2f,%d", timestamp,heartRate.body.average, heartRate.body.rrData[0]));
                             }
                         }
 

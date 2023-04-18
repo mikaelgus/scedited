@@ -46,8 +46,14 @@ public class LogsListAdapter extends BaseAdapter {
         TextView textView = ViewHolder.get(convertView, android.R.id.text1);
 
         File fileItem = (File) getItem(position);
-        textView.setText(fileItem.getName());
-
+        String name = fileItem.getName();
+        //textView.setText(fileItem.getName());
+        String day = name.substring(8, 10);
+        String month = name.substring(5, 7);
+        String year = name.substring(0, 4);
+        String hours = name.substring(11, 13);
+        String minutes = name.substring(14, 16);
+        textView.setText(day + "." + month + "." + year + " klo " + hours + ":" + minutes);
 
         return convertView;
     }
