@@ -37,6 +37,7 @@ import com.movesense.showcaseapp.model.MdsDeviceInfoOldSw;
 import com.movesense.showcaseapp.model.RxBleDeviceWrapper;
 import com.movesense.showcaseapp.section_00_mainView.MainViewActivity;
 import com.movesense.showcaseapp.section_01_movesense.sensors.sensors_list.SensorListActivity;
+import com.movesense.showcaseapp.section_01_movesense.tests.AngularVelocityActivity;
 import com.movesense.showcaseapp.section_07_instructions.InstructionsActivity;
 import com.movesense.showcaseapp.section_08_info.InfoActivity;
 import com.movesense.showcaseapp.utils.ThrowableToastingAction;
@@ -306,7 +307,7 @@ public class MovesenseActivity extends AppCompatActivity implements MovesenseCon
                             connectedDevicesSubscriptions.dispose();
 
                             // We have a new SdsDevice
-                            startActivity(new Intent(MovesenseActivity.this, SensorListActivity.class));
+                            startActivity(new Intent(MovesenseActivity.this, AngularVelocityActivity.class));
                         } else {
                             Log.e(TAG, "DISCONNECT");
                         }

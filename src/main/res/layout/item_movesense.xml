@@ -5,9 +5,9 @@
     android:layout_height="100dp"
     android:background="@drawable/white_rounded_background"
     android:orientation="vertical"
-    android:layout_margin="4dp"
     android:paddingLeft="20dp"
-    android:paddingRight="20dp">
+    android:paddingRight="20dp"
+    android:elevation="10dp">
 
     <ImageView
         android:id="@+id/movesense_image"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#1D8CC6D8"
+    android:background="#5B8CC6D8"
     android:padding="8dp"
     tools:context=".section_07_instructions.InstructionsActivity">
 
@@ -49,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="15dp"
+                android:elevation="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -75,7 +76,7 @@
                     android:text="- Aseta älylaitteen Bluetooth-yhteys päälle.
                     \n\n- Paina sovelluksen etusivulta Yhdistä anturi-painiketta.
                     \n\n- Käynnistä MoveSense-anturi koskettamalla takaosan liitäntänappeja peukaloilla. Käynnissä olevan anturin etuosassa vilkkuu punainen led-valo.
-                    \n\n- Yhdistyksen onnistuessa anturin tunnusnumero ilmestyy näytölle, jonka jälkeen numeroa painamalla anturi yhdistyy sovellukseen. Sovellus ilmoittaa onnistuneesta yhdistyksestä."/>
+                    \n\n- Yhdistyksen onnistuessa anturi ja sen tunnusnumero ilmestyy näytölle, jonka jälkeen tätä painamalla anturi yhdistyy sovellukseen. Sovellus siirtyy sivulle, jossa voidaan käynnistää mittaus ja tarkistaa anturin akun tilanne."/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -91,7 +92,7 @@
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/black"
                     android:text="- Varmista että anturi on käynnissä. Käynnissä olevan anturin etuosassa vilkkuu punainen led-valo.
-                    \n\n- Yhdistä anturi liitäntänapeista sykevyöhön."/>
+                    \n\n- Yhdistä anturi liitäntänapeista sykevyöhön alla olevan kuvan mukaisesti."/>
 
                 <ImageView
                     android:layout_width="200dp"
@@ -105,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/black"
-                    android:text="-Säädä sykevyön pituutta tarpeen mukaan siten, että vyö pysyy tiukasti paikallaan.
+                    android:text="-Säädä sykevyön pituutta tarpeen mukaan siten, että vyö pysyy tiukasti paikallaan rintakehälle asetettuna.
                     \n\n- Paremman tuloksen saamiseksi kostuta sykevyön takana olevat elektrodialueet vedellä."/>
 
                 <ImageView
@@ -142,7 +143,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/black"
-                    android:text="- Kun anturi on kytketty päälle, anturi alkaa mittaamaan automaattisesti."/>
+                    android:text="- Kun anturi on kytketty päälle ja yhdistetty älylaitteeseen, sovellus siirtyy Käynnistä mittaus-sivulle.
+                    \n\n - Mittaus käynnistyy painamalla Käynnistä mittaus-painikkeen ON-asentoon.
+                    \n\n - Suorita mittaus yön ajalta ja aamulla herättyäsi sammuta mittaus painamalla Käynnistä mittaus-painike OFF-asentoon.
+                    \n\n - Mittauksen aikana havaitaan yön aikana tapahtuneet mahdolliset matalat hengitysjaksot ja sovellus kertoo viitteellisen tuloksen, onko aihetta epäillä sentraalista uniapneaa. "/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -157,7 +161,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textColor="@android:color/black"
-                    android:text="- Aikaisempia mittauksia voit tarkastella painamalla etusivun Tulokset -painikkeesta. Tulokset avautuvat listana, ja painamalla yksittäistä mittausta avautuu mittauksen tarkemmat tiedot."/>
+                    android:text="- Aikaisempia mittauksia voit tarkastella painamalla etusivun Mittaustulokset -painikkeesta. Kaikki tulokset avautuvat listana, ja painamalla yksittäistä mittausta avautuu mittauksen tarkemmat tiedot.
+                    \n\n - Pystyt avaamaan mittauksen tiedot Avaa tiedosto-kohdasta, poistamaan yksittäisen mittauksen Poista tiedosto-kohdasta tai lähettämään mittauksen Google Driveen Lähetä tiedosto Google Driveen-kohdasta.
+                    \n\n - Avattua yksittäisen mittauksen tiedot sovellus antaa viitteellisen arvion sentraalisen uniapnean epäilystä ja näyttää visuaalista mittausdataa hengitysliikkeestä ja mahdollisista hengityskatkoista. "/>
 
             </LinearLayout>
 
@@ -168,7 +174,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="15dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:elevation="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -217,7 +224,8 @@ Säädä vyötä niin, että se istuu tiukemmin rintakehää vasten. Varmista, e
                 android:orientation="vertical"
                 android:padding="15dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp">
+                android:layout_marginBottom="20dp"
+                android:elevation="5dp">
 
                 <TextView
                     android:layout_width="match_parent"

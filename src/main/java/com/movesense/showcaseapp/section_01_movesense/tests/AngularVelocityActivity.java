@@ -1,6 +1,8 @@
 package com.movesense.showcaseapp.section_01_movesense.tests;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -10,7 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +25,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.movesense.mds.Mds;
 import com.movesense.mds.MdsException;
@@ -35,7 +40,12 @@ import com.movesense.showcaseapp.bluetooth.ConnectionLostDialog;
 import com.movesense.showcaseapp.bluetooth.MdsRx;
 import com.movesense.showcaseapp.csv.CsvLogger;
 import com.movesense.showcaseapp.model.AngularVelocity;
+import com.movesense.showcaseapp.model.EnergyGetModel;
 import com.movesense.showcaseapp.model.InfoResponse;
+import com.movesense.showcaseapp.section_00_mainView.MainViewActivity;
+import com.movesense.showcaseapp.section_01_movesense.MovesenseActivity;
+import com.movesense.showcaseapp.section_01_movesense.sensors.sensors_list.SensorListActivity;
+import com.movesense.showcaseapp.section_07_instructions.InstructionsActivity;
 import com.movesense.showcaseapp.utils.FormatHelper;
 import com.polidea.rxandroidble2.RxBleDevice;
 
@@ -46,11 +56,14 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
+import butterknife.OnClick;
 import butterknife.OnItemSelected;
 
 public class AngularVelocityActivity extends BaseActivity implements BleManager.IBleConnectionMonitor {
 
     private final String LOG_TAG = AngularVelocityActivity.class.getSimpleName();
+    private final String TAG = SensorListActivity.class.getSimpleName();
+    private final String BATTERY_PATH_GET = "/System/Energy/Level";
     private final String ANGULAR_VELOCITY_PATH = "Meas/Gyro/";
     private final String ANGULAR_VELOCITY_INFO_PATH = "/Meas/Gyro/Info";
     public static final String URI_EVENTLISTENER = "suunto://MDS/EventListener";
@@ -60,7 +73,11 @@ public class AngularVelocityActivity extends BaseActivity implements BleManager.
     private String rate;
     private MdsSubscription mdsSubscription;
 
+    @BindView(R.id.measurement_back_button) ImageView connection;
 
+    @BindView(R.id.temperature_get_button) Button mTemperatureGetButton;
+    @BindView(R.id.value_textView) TextView mValueTextView;
+    @BindView(R.id.instructions_fab) FloatingActionButton fab;
     @BindView(R.id.switchSubscription) SwitchCompat switchSubscription;
     @BindView(R.id.spinner) Spinner spinner;
     @BindView(R.id.x_axis_textView) TextView xAxisTextView;
@@ -323,5 +340,76 @@ public class AngularVelocityActivity extends BaseActivity implements BleManager.
         set.setValueTextSize(0f);
 
         return set;
+    }
+
+    @OnClick({R.id.measurement_back_button, R.id.temperature_get_button, R.id.instructions_fab})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            //Ilmoita yhteyden katkaisemisesta poistuttaessa
+            case R.id.measurement_back_button:
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.exit)
+                        .setMessage(R.string.disconnect_dialog_text)
+                        .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.d(TAG, "Disconnecting...");
+
+                                BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
+                                startActivity(new Intent(AngularVelocityActivity.this, MainViewActivity.class));
+                            }
+                        }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        }).show();
+                break;
+
+                //Hae akun tila
+            case R.id.temperature_get_button:
+                Mds.builder().build(this).get(MdsRx.SCHEME_PREFIX +
+                                MovesenseConnectedDevices.getConnectedDevice(0).getSerial() + BATTERY_PATH_GET,
+                        null, new MdsResponseListener() {
+                            @Override
+                            public void onSuccess(String s) {
+
+                                EnergyGetModel energyGetModel = new Gson().fromJson(s, EnergyGetModel.class);
+
+                                mValueTextView.setText(String.format(Locale.getDefault(), getString(R.string.battery_value) + " %d ", energyGetModel.content));
+                            }
+
+                            @Override
+                            public void onError(MdsException e) {
+                                Log.e(TAG, "onError: ", e);
+                            }
+                        });
+                break;
+
+            case R.id.instructions_fab:
+                startActivity(new Intent(AngularVelocityActivity.this, InstructionsActivity.class));
+                break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.exit)
+                .setMessage(R.string.disconnect_dialog_text)
+                .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.d(TAG, "Disconnecting...");
+
+                        BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
+                        startActivity(new Intent(AngularVelocityActivity.this, MainViewActivity.class));
+                    }
+                }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
     }
 }

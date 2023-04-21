@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1D8CC6D8"
+    android:background="#5B8CC6D8"
     android:orientation="vertical"
     android:padding="8dp">
 
@@ -66,9 +66,9 @@
                     android:backgroundTint="#82C0CC"
                     android:padding="10dp"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="-20dp"
                     android:layout_marginBottom="0dp"
                     android:orientation="vertical"
@@ -78,6 +78,7 @@
                     android:padding="15dp">
 
                     <TextView
+                        android:id="@+id/instructions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/Ohjeet"
@@ -87,12 +88,22 @@
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
+                        android:id="@+id/instructions_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/instructions"
                         android:text="Kuinka yhdistää Movesense-anturi ja suorittaa mittaus?"
                         android:textColor="@android:color/black"/>
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_arrow_forward_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
             </LinearLayout>
 
             <!--Yhdistä anturi ja käynnistä mittaus-nappi-->
@@ -114,9 +125,9 @@
                     android:backgroundTint="#16697A"
                     android:padding="10dp"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="-20dp"
                     android:layout_marginBottom="0dp"
                     android:orientation="vertical"
@@ -126,6 +137,7 @@
                     android:padding="15dp">
 
                     <TextView
+                        android:id="@+id/connect"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Yhdistä anturi ja aloita mittaus"
@@ -135,12 +147,22 @@
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
+                        android:id="@+id/connect_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/connect"
                         android:text="Yhdistä Movesense-anturi mobiililaitteeseesi ja mittaa yön yli."
                         android:textColor="@android:color/black"/>
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_arrow_forward_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
             </LinearLayout>
 
             <!--Mittaustulokset-nappi-->
@@ -162,9 +184,9 @@
                     android:backgroundTint="#FFA62B"
                     android:padding="10dp"/>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="110dp"
                     android:layout_marginLeft="-20dp"
                     android:layout_marginBottom="0dp"
                     android:orientation="vertical"
@@ -174,6 +196,7 @@
                     android:padding="15dp">
 
                     <TextView
+                        android:id="@+id/results"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Mittaustulokset"
@@ -183,118 +206,23 @@
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
+                        android:id="@+id/results_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@id/results"
                         android:text="Tarkastele aiempia mittaustuloksiasi."
                         android:textColor="@android:color/black"/>
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_arrow_forward_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentBottom="true"/>
+
+                </RelativeLayout>
             </LinearLayout>
-
-
-
-
-            <!--Ohejeet-nappi
-            <RelativeLayout
-                android:id="@+id/mainView_instructions"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/mainView_card_height"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/white_rounded_background"
-                android:gravity="center"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/mainView_Instructions_text"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/baseline_question_mark_24"/>
-
-                <TextView
-                    android:id="@+id/mainView_Instructions_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:text="@string/Ohjeet"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            Yhdistä anturi-nappi
-            <RelativeLayout
-                android:id="@+id/mainView_movesense_Ll"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/mainView_card_height"
-                android:layout_margin="4dp"
-                android:background="@drawable/white_rounded_background"
-                android:gravity="center"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/mainView_movesense_text"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/baseline_bluetooth_connected_24" />
-
-                <TextView
-                    android:id="@+id/mainView_movesense_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:text="@string/yhdist_anturi"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-
-            Mittaustulokset-nappi
-            <RelativeLayout
-                android:id="@+id/mainView_savedData_Ll"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/mainView_card_height"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/white_rounded_background"
-                android:gravity="center"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_above="@id/mainView_savedData_text"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/baseline_insert_chart_outlined_24" />
-
-                <TextView
-                    android:id="@+id/mainView_savedData_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:text="@string/mittaustulokset"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-            </RelativeLayout>
-        </LinearLayout>-->
     </LinearLayout>
 </LinearLayout>
 </LinearLayout>
