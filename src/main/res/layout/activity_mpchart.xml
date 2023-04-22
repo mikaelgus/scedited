@@ -25,31 +25,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Tarkastele mittausta"
+            android:text="Mittaustulokset"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
     </RelativeLayout>
-
-    <com.github.mikephil.charting.charts.HorizontalBarChart
-        android:layout_width="match_parent"
-        android:layout_height="300px"
-        android:layout_below="@+id/header"
-        android:layout_marginTop="20dp"
-        android:id="@+id/barchart" />
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:layout_width="match_parent"
-        android:layout_height="400px"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/barchart"
-        android:id="@+id/angularcharty" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/angularcharty"
+        android:layout_below="@id/header"
         android:orientation="vertical"
         android:background="@drawable/white_rounded_background"
         android:layout_margin="10dp"
@@ -57,14 +42,47 @@
         android:elevation="10dp">
 
         <TextView
+            android:id="@+id/textViewBarChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hengitysjakso(t)"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"/>
+
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:layout_below="@+id/textViewBarChart"
+        android:layout_marginTop="2dp"
+        android:id="@+id/barchart" />
+
+        <TextView
+            android:id="@+id/textViewLineChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Hengitysliikkeet"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="match_parent"
+        android:layout_height="400px"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/barchart"
+        android:id="@+id/angularcharty" />
+
+        <TextView
             android:id="@+id/textViewCounter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_below="@id/angularcharty"
-
             android:text="Laskuri"
             android:textColor="@android:color/black"
+            android:layout_marginTop="20dp"
             android:textSize="16sp"/>
 
         <TextView
@@ -75,16 +93,29 @@
             android:layout_below="@id/textViewCounter"
             android:text="AHI arvo"
             android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@id/textViewAHI"
+            android:text="Kesto"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"
             android:textSize="16sp"/>
         <TextView
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_below="@id/textViewAHI"
+            android:layout_below="@id/textViewTime"
             android:text="Tulokset"
             android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"
             android:textSize="16sp"/>
+
         <TextView
             android:id="@+id/textViewNotMedical"
             android:layout_width="match_parent"
@@ -93,6 +124,8 @@
             android:layout_below="@id/textViewResult"
             android:text="Viite"
             android:textColor="@android:color/black"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
             android:textSize="16sp"/>
 
     </LinearLayout>

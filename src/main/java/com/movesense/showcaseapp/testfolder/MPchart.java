@@ -39,7 +39,7 @@ public class MPchart extends AppCompatActivity {
         private LineChart angularChartX, angularChartY, angularChartZ;
         private HorizontalBarChart horizontalBarChart;
         ArrayList angularArrayList1, angularArrayList2, angularArrayList3;
-        public TextView textCounter, textAHI, textResult, textNotMedical;
+        public TextView textCounter, textAHI, textTime, textResult, textNotMedical;
         public ImageView backButton;
     int count = 0;
     float lastMilSecValue = 0;
@@ -64,6 +64,7 @@ public class MPchart extends AppCompatActivity {
 
         textCounter = (TextView) findViewById(R.id.textViewCounter);
         textAHI = (TextView) findViewById(R.id.textViewAHI);
+        textTime = (TextView) findViewById(R.id.textViewTime);
         textResult = (TextView) findViewById(R.id.textViewResult);
         textNotMedical = (TextView) findViewById(R.id.textViewNotMedical);
 
@@ -73,7 +74,7 @@ public class MPchart extends AppCompatActivity {
 
         ArrayList<ILineDataSet> angularDataSetsY = new ArrayList<>();
 
-        LineDataSet angularset2 = new LineDataSet(angularArrayList2, "Y");
+        LineDataSet angularset2 = new LineDataSet(angularArrayList2, "Kulmanopeus-anturin Y-akseli");
         angularset2.setColor(Color.BLUE);
         angularset2.setLineWidth(2f);
         angularset2.setDrawCircles(false);
@@ -81,7 +82,7 @@ public class MPchart extends AppCompatActivity {
         angularDataSetsY.add(angularset2);
 
         LineData angulardatay = new LineData(angularDataSetsY);
-        angularChartY.getDescription().setText("Angular-anturi y-akseli");
+        angularChartY.getDescription().setText("");
         angularChartY.setData(angulardatay);
 
         textCounter.setText("Matalia hengitysjaksoja havaittu " + count + " kertaa.");
@@ -157,7 +158,7 @@ public class MPchart extends AppCompatActivity {
             lastMilSecValue = Integer.parseInt(millisecods.get(millisecods.size()-1));
             //Log.d("Viimeinen millisekuntti", "index " + lastIndex + " arvo: " + last);
             //Log.d("pätkä yhteensä", "rivisumma " + sectionTotal);
-            Log.d("sleep array", "lukuja " + sleepSections);
+            //Log.d("sleep array", "lukuja " + sleepSections);
 
         } catch (IOException e) {
             Log.wtf("MyActivity", "Error reading csv-file" + line, e);
@@ -177,7 +178,7 @@ public class MPchart extends AppCompatActivity {
             horizontalBarChart.getAxisLeft().setDrawLabels(false);
             horizontalBarChart.getAxisRight().setDrawLabels(false);
             horizontalBarChart.getXAxis().setDrawLabels(false);
-            horizontalBarChart.getDescription().setText("Hengitysjakso(t)");
+            horizontalBarChart.getDescription().setText("");
 
             ArrayList<BarEntry> bValues = new ArrayList<>();
 
@@ -196,6 +197,9 @@ public class MPchart extends AppCompatActivity {
             int myYellow = Color.rgb(240, 230, 100);
 
             int[] colors = new int[]{myYellow, myBlue};
+            if(sleepSections.size() <= 1){
+                set2.setLabel("Normaali hengitysliike");
+            }
             set2.setStackLabels(new String[]{"Normaali hengitysliike", "Matala hengitysliike"});
             set2.setColors(colors);
             set2.setDrawValues(false);
@@ -216,7 +220,7 @@ public class MPchart extends AppCompatActivity {
         //convert hours and minutes from last time value
         int resultHours = (int) ((lastMilSecValue / (1000*60*60)) % 24);
         int resultMinutes = (int) ((lastMilSecValue / (1000*60)) % 60);
-        String resultTime = String.format("%02d:%02d", resultHours, resultMinutes);
+        String resultTime = String.format("%02d.%02d", resultHours, resultMinutes);
 
         //result/hour
         float resultValue = count/hours;
@@ -225,7 +229,8 @@ public class MPchart extends AppCompatActivity {
         //Log.d("Keskiarvo", "df: " + average);
         //Log.d("AHI keskiarvo", "Kesto " + hours + " Määrä " + count + " Tulos: " + resultValue);
 
-        textAHI.setText("Mittausjakson kesto " + resultTime + ". AHI on " + average + "/tunnissa.");
+        textAHI.setText(" AHI keskiarvo: " + average + "/tunnissa.");
+        textTime.setText("Mittausjakson kesto " + resultTime + ".");
 
         if(resultValue <= 4.9){
             textResult.setText("Ei aihetta epäillä sentraalista uniapneaa.");
