@@ -103,5 +103,4 @@
         android:layout_below="@id/textViewResult"
         android:text="Viite" />
 
-    ´
 </RelativeLayout>
