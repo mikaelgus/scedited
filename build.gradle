@@ -14,7 +14,7 @@ allprojects {
     repositories {
         jcenter()
         flatDir {
-            dirs './', '../Movesense/', './Movesense/', '/Movesense/' // Folders to look for jar & aar libraries
+            dirs './', '../Movesense/', './Movesense/.', '/Movesense/' // Folders to look for jar & aar libraries
         }
         google()
         maven { url 'https://jitpack.io' }
