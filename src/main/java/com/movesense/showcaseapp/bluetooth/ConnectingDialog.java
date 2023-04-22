@@ -18,7 +18,7 @@ public enum ConnectingDialog {
         if (alertDialog == null) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context)
                     .setCancelable(false)
-                    .setTitle(context.getString(R.string.connecting) + " to: " + deviceAddress)
+                    .setTitle(context.getString(R.string.connecting) + ": " + deviceAddress + " -anturiin")
                     .setMessage(R.string.please_wait_connecting);
 
             alertDialog = alertDialogBuilder.show();

@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
-    android:gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#5B8CC6D8"
     android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".section_01_movesense.MovesenseActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/connection_back_button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="backbutton"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Yhdistä anturi"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+<!--
     <TextView
         android:id="@+id/movesense_infoTv"
         android:layout_width="wrap_content"
@@ -17,22 +41,50 @@
         android:gravity="center"
         android:padding="10dp"
         android:text="Search Movesense devices by clicking button on the bottom"
-        android:textColor="@color/colorText"
-        android:textSize="18sp"/>
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/> -->
 
-    <ProgressBar
-        android:id="@+id/movesense_progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:indeterminate="true"
-        android:visibility="gone"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:background="@color/colorBackground"
-        android:id="@+id/movesense_recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="vertical"
+        android:padding="15dp">
 
-</RelativeLayout>
+        <ProgressBar
+            android:id="@+id/movesense_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Löydetyt anturit:"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movesense_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/instructions_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            app:fabSize="normal"
+            android:backgroundTint="#82C0CC"
+            android:src="@drawable/baseline_question_mark_24"
+            android:elevation="10dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

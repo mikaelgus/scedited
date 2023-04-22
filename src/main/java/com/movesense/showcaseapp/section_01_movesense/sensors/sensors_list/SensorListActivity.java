@@ -23,15 +23,10 @@ import com.movesense.showcaseapp.section_01_movesense.device_settings.DeviceSett
 import com.movesense.showcaseapp.section_01_movesense.tests.AngularVelocityActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.AppInfoActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.BatteryActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.EcgActivityGraphView;
 import com.movesense.showcaseapp.section_01_movesense.tests.HeartRateTestActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.ImuActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.LedTestActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.LinearAccelerationTestActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.MagneticFieldTestActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.MemoryDiagnosticActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.MultiSubscribeActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.TemperatureTestActivity;
 import com.movesense.showcaseapp.utils.ThrowableToastingAction;
 
 import java.util.ArrayList;
@@ -44,9 +39,9 @@ import io.reactivex.disposables.CompositeDisposable;
 public class SensorListActivity extends BaseActivity implements View.OnClickListener {
 
     @BindView(R.id.sensorList_recyclerView) RecyclerView mSensorListRecyclerView;
-    @BindView(R.id.sensorList_deviceInfo_title_tv) TextView mSensorListDeviceInfoTitleTv;
-    @BindView(R.id.sensorList_deviceInfo_serial_tv) TextView mSensorListDeviceInfoSerialTv;
-    @BindView(R.id.sensorList_deviceInfo_sw_tv) TextView mSensorListDeviceInfoSwTv;
+    //@BindView(R.id.sensorList_deviceInfo_title_tv) TextView mSensorListDeviceInfoTitleTv;
+    //@BindView(R.id.sensorList_deviceInfo_serial_tv) TextView mSensorListDeviceInfoSerialTv;
+    //@BindView(R.id.sensorList_deviceInfo_sw_tv) TextView mSensorListDeviceInfoSwTv;
 
     private CompositeDisposable subscriptions;
 
@@ -66,18 +61,18 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
 
         ArrayList<SensorListItemModel> sensorListItemModels = new ArrayList<>();
 
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.app_info_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.linear_acceleration_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.led_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.temperature_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.heart_rate_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.app_info_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.linear_acceleration_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.led_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.temperature_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.heart_rate_name)));
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.angular_velocity_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.magnetic_field_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.multi_subscription_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.ecg)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.magnetic_field_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.multi_subscription_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.ecg)));
         sensorListItemModels.add(new SensorListItemModel(getString(R.string.battery_energy)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.imu_name)));
-        sensorListItemModels.add(new SensorListItemModel(getString(R.string.Memory_Diagnostic)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.imu_name)));
+        //sensorListItemModels.add(new SensorListItemModel(getString(R.string.Memory_Diagnostic)));
 
         SensorsListAdapter sensorsListAdapter = new SensorsListAdapter(sensorListItemModels, this);
         mSensorListRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -110,8 +105,8 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
     protected void onResume() {
         super.onResume();
 
-        mSensorListDeviceInfoSerialTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
-        mSensorListDeviceInfoSwTv.setText("Sw version: " + MovesenseConnectedDevices.getConnectedDevice(0).getSwVersion());
+        //mSensorListDeviceInfoSerialTv.setText("Serial: " + MovesenseConnectedDevices.getConnectedDevice(0).getSerial());
+        //mSensorListDeviceInfoSwTv.setText("Sw version: " + MovesenseConnectedDevices.getConnectedDevice(0).getSwVersion());
 
         subscriptions.add(MdsRx.Instance.connectedDeviceObservable()
                 .subscribe(new Consumer<MdsConnectedDevice>() {
@@ -150,28 +145,16 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
         if (getString(R.string.led_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, LedTestActivity.class));
             return;
-        } else if (getString(R.string.linear_acceleration_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, LinearAccelerationTestActivity.class));
-            return;
-        } else if (getString(R.string.temperature_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, TemperatureTestActivity.class));
-            return;
+
+
         } else if (getString(R.string.angular_velocity_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, AngularVelocityActivity.class));
             return;
-        } else if (getString(R.string.magnetic_field_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, MagneticFieldTestActivity.class));
-            return;
+
         } else if (getString(R.string.heart_rate_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, HeartRateTestActivity.class));
             return;
-        } else if (getString(R.string.multi_subscription_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, MultiSubscribeActivity.class));
-            return;
-        } else if (getString(R.string.ecg).equals(sensorName)) {
-//            startActivity(new Intent(SensorListActivity.this, EcgActivity.class));
-            startActivity(new Intent(SensorListActivity.this, EcgActivityGraphView.class));
-            return;
+
         } else if (getString(R.string.battery_energy).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, BatteryActivity.class));
             return;

@@ -100,8 +100,8 @@ public class CsvLogger {
         StringBuilder sb = new StringBuilder();
 
         // Get Current Timestamp in format suitable for file names (i.e. no : or other bad chars)
-        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Helsinki"));//Z (orig)
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss"); //yyyy-MM-dd_HH-mm-ss (orig)
+        Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Helsinki"));
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
         formatter.setTimeZone(cal.getTimeZone());
         String currentTimestamp = formatter.format(cal.getTime());
 

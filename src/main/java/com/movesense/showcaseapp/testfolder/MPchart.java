@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -17,6 +19,9 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.movesense.showcaseapp.R;
+import com.movesense.showcaseapp.google_drive.SendLogsToGoogleDriveActivity;
+import com.movesense.showcaseapp.section_00_mainView.MainViewActivity;
+import com.movesense.showcaseapp.section_08_info.InfoActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,7 +39,8 @@ public class MPchart extends AppCompatActivity {
         private LineChart angularChartX, angularChartY, angularChartZ;
         private HorizontalBarChart horizontalBarChart;
         ArrayList angularArrayList1, angularArrayList2, angularArrayList3;
-        public TextView textCounter, textTime, textAHI, textResult, textNotMedical;
+        public TextView textCounter, textAHI, textResult, textNotMedical;
+        public ImageView backButton;
     int count = 0;
     float lastMilSecValue = 0;
     @Override
@@ -53,8 +59,10 @@ public class MPchart extends AppCompatActivity {
             throw new RuntimeException(e);
         }
 
+        backButton = (ImageView) findViewById(R.id.results_back_button);
+        backButton.setOnClickListener(this::onClick);
+
         textCounter = (TextView) findViewById(R.id.textViewCounter);
-        textTime = (TextView) findViewById(R.id.textViewTime);
         textAHI = (TextView) findViewById(R.id.textViewAHI);
         textResult = (TextView) findViewById(R.id.textViewResult);
         textNotMedical = (TextView) findViewById(R.id.textViewNotMedical);
@@ -65,7 +73,7 @@ public class MPchart extends AppCompatActivity {
 
         ArrayList<ILineDataSet> angularDataSetsY = new ArrayList<>();
 
-        LineDataSet angularset2 = new LineDataSet(angularArrayList2, "Kulmanopeus-anturin Y-akseli");
+        LineDataSet angularset2 = new LineDataSet(angularArrayList2, "Y");
         angularset2.setColor(Color.BLUE);
         angularset2.setLineWidth(2f);
         angularset2.setDrawCircles(false);
@@ -73,7 +81,7 @@ public class MPchart extends AppCompatActivity {
         angularDataSetsY.add(angularset2);
 
         LineData angulardatay = new LineData(angularDataSetsY);
-        angularChartY.getDescription().setText("");
+        angularChartY.getDescription().setText("Angular-anturi y-akseli");
         angularChartY.setData(angulardatay);
 
         textCounter.setText("Matalia hengitysjaksoja havaittu " + count + " kertaa.");
@@ -122,7 +130,7 @@ public class MPchart extends AppCompatActivity {
                     currentCount++;
                     //measure values
                     measureValue = Float.parseFloat(tokens[3] + '.' + tokens[4]);
-                    if(measureValue >= 0.5 || measureValue <= -0.5) {
+                    if(measureValue >= 0.4 || measureValue <= -0.4) {
                         endValue = Float.parseFloat(tokens[0]);
                         timerange = endValue - startingValue;
 
@@ -169,14 +177,14 @@ public class MPchart extends AppCompatActivity {
             horizontalBarChart.getAxisLeft().setDrawLabels(false);
             horizontalBarChart.getAxisRight().setDrawLabels(false);
             horizontalBarChart.getXAxis().setDrawLabels(false);
-            horizontalBarChart.getDescription().setText("");
+            horizontalBarChart.getDescription().setText("Hengitysjakso(t)");
 
             ArrayList<BarEntry> bValues = new ArrayList<>();
 
             //draw sections from sleepSections arrayList
             float[] sectionList = new float[sleepSections.size()];
             for(int i = 0; i < sleepSections.size(); i++){
-                sectionList[i] = sleepSections.get(i);
+            sectionList[i] = sleepSections.get(i);
             }
 
             //bValues.add(new BarEntry(0, new float[]{10, 5, 30, 2, 10, 5, 10}));
@@ -188,10 +196,6 @@ public class MPchart extends AppCompatActivity {
             int myYellow = Color.rgb(240, 230, 100);
 
             int[] colors = new int[]{myYellow, myBlue};
-            if(sleepSections.size() <= 1){
-                Log.d("Mitä nyt", "pitää tehdä?? " + sleepSections.size());
-                set2.setLabel("Normaali hengitysliike");
-            }
             set2.setStackLabels(new String[]{"Normaali hengitysliike", "Matala hengitysliike"});
             set2.setColors(colors);
             set2.setDrawValues(false);
@@ -212,7 +216,7 @@ public class MPchart extends AppCompatActivity {
         //convert hours and minutes from last time value
         int resultHours = (int) ((lastMilSecValue / (1000*60*60)) % 24);
         int resultMinutes = (int) ((lastMilSecValue / (1000*60)) % 60);
-        String resultTime = String.format("%02d.%02d", resultHours, resultMinutes);
+        String resultTime = String.format("%02d:%02d", resultHours, resultMinutes);
 
         //result/hour
         float resultValue = count/hours;
@@ -221,8 +225,7 @@ public class MPchart extends AppCompatActivity {
         //Log.d("Keskiarvo", "df: " + average);
         //Log.d("AHI keskiarvo", "Kesto " + hours + " Määrä " + count + " Tulos: " + resultValue);
 
-        textAHI.setText("Mittausjakson kesto " + resultTime + ".");
-        textTime.setText("AHI keskiarvo: " + average + "/tunnissa.");
+        textAHI.setText("Mittausjakson kesto " + resultTime + ". AHI on " + average + "/tunnissa.");
 
         if(resultValue <= 4.9){
             textResult.setText("Ei aihetta epäillä sentraalista uniapneaa.");
@@ -241,5 +244,13 @@ public class MPchart extends AppCompatActivity {
             textNotMedical.setText("(Tulos on viitteellinen.)");
         }
 
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.results_back_button:
+                startActivity(new Intent(MPchart.this, SendLogsToGoogleDriveActivity.class));
+                break;
+        }
     }
 }
