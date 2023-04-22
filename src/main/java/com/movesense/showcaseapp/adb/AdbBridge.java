@@ -20,7 +20,7 @@ import com.movesense.showcaseapp.bluetooth.RxBle;
 import com.movesense.showcaseapp.model.MdsConnectedDevice;
 import com.movesense.showcaseapp.model.MdsDeviceInfoNewSw;
 import com.movesense.showcaseapp.model.MdsDeviceInfoOldSw;
-import com.movesense.showcaseapp.section_03_dfu.DfuUtil;
+
 import com.movesense.showcaseapp.utils.FormatHelper;
 import com.polidea.rxandroidble2.RxBleScanResult;
 
@@ -311,9 +311,6 @@ public class AdbBridge extends BroadcastReceiver {
                                         return;
                                     }
 
-                                    DfuUtil.runDfuServiceUpdate(context, DfuUtil.incrementMacAddress(movesense_mac_address), mDevice_name,
-                                            Uri.parse("file://" + yourFile.getPath()), null);
-
                                     if (MovesenseConnectedDevices.getConnectedDevices().size() == 1) {
                                         MovesenseConnectedDevices.getConnectedDevices().remove(0);
                                     } else {
@@ -339,19 +336,6 @@ public class AdbBridge extends BroadcastReceiver {
         } else if (type.equals("dfu_update")) {
 
             if (MovesenseConnectedDevices.getConnectedDevices().size() > 0) {
-                DfuUtil.runDfuModeOnConnectedDevice(context, new MdsResponseListener() {
-                    @Override
-                    public void onSuccess(String s) {
-                        Log.d(LOG_TAG, "DFU onSuccess: ");
-
-                        BleManager.INSTANCE.disconnect(MovesenseConnectedDevices.getConnectedRxDevice(0));
-                    }
-
-                    @Override
-                    public void onError(MdsException e) {
-                        Log.d(LOG_TAG, "DFU onError: ", e);
-                    }
-                });
             } else {
 
                 mScanningCompositeSubscription.clear();
@@ -387,9 +371,6 @@ public class AdbBridge extends BroadcastReceiver {
                                         Log.e(LOG_TAG, "File not exists - path: " + yourFile.getPath());
                                         return;
                                     }
-
-                                    DfuUtil.runDfuServiceUpdate(context, dfu_mac_address, mDevice_name,
-                                            Uri.parse("file://" + yourFile.getPath()), null);
 
                                     mScanningCompositeSubscription.clear();
                                 }

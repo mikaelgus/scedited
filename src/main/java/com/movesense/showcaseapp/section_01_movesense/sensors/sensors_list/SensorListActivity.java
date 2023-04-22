@@ -23,15 +23,10 @@ import com.movesense.showcaseapp.section_01_movesense.device_settings.DeviceSett
 import com.movesense.showcaseapp.section_01_movesense.tests.AngularVelocityActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.AppInfoActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.BatteryActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.EcgActivityGraphView;
 import com.movesense.showcaseapp.section_01_movesense.tests.HeartRateTestActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.ImuActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.LedTestActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.LinearAccelerationTestActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.MagneticFieldTestActivity;
 import com.movesense.showcaseapp.section_01_movesense.tests.MemoryDiagnosticActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.MultiSubscribeActivity;
-import com.movesense.showcaseapp.section_01_movesense.tests.TemperatureTestActivity;
 import com.movesense.showcaseapp.utils.ThrowableToastingAction;
 
 import java.util.ArrayList;
@@ -150,28 +145,16 @@ public class SensorListActivity extends BaseActivity implements View.OnClickList
         if (getString(R.string.led_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, LedTestActivity.class));
             return;
-        } else if (getString(R.string.linear_acceleration_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, LinearAccelerationTestActivity.class));
-            return;
-        } else if (getString(R.string.temperature_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, TemperatureTestActivity.class));
-            return;
+
+
         } else if (getString(R.string.angular_velocity_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, AngularVelocityActivity.class));
             return;
-        } else if (getString(R.string.magnetic_field_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, MagneticFieldTestActivity.class));
-            return;
+
         } else if (getString(R.string.heart_rate_name).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, HeartRateTestActivity.class));
             return;
-        } else if (getString(R.string.multi_subscription_name).equals(sensorName)) {
-            startActivity(new Intent(SensorListActivity.this, MultiSubscribeActivity.class));
-            return;
-        } else if (getString(R.string.ecg).equals(sensorName)) {
-//            startActivity(new Intent(SensorListActivity.this, EcgActivity.class));
-            startActivity(new Intent(SensorListActivity.this, EcgActivityGraphView.class));
-            return;
+
         } else if (getString(R.string.battery_energy).equals(sensorName)) {
             startActivity(new Intent(SensorListActivity.this, BatteryActivity.class));
             return;

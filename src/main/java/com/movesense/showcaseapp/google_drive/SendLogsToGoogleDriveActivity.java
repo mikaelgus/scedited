@@ -156,8 +156,8 @@ public class SendLogsToGoogleDriveActivity extends AppCompatActivity implements 
         final File clickedFile = logsFileList.get(position);
 
         new AlertDialog.Builder(this)
-                .setTitle("Choose a file action")
-                .setItems(new CharSequence[]{"Open file", "Send file to Google Drive", "Open file to MPchart", "Delete file"},
+                .setTitle("Valitse toiminto")
+                .setItems(new CharSequence[]{"Avaa tiedosto", "Lähetä tiedosto Google Driveen", "Näytä tulokset", "Poista tiedosto"},
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -182,12 +182,26 @@ public class SendLogsToGoogleDriveActivity extends AppCompatActivity implements 
                                     case 2:
                                         // Open file and make a chart
                                         Intent intent2 = new Intent(SendLogsToGoogleDriveActivity.this, MPchart.class);
+                                        intent2.putExtra("KEY_FILE", clickedFile);
                                         startActivity(intent2);
                                         break;
 
                                     case 3:
                                         // Delete file
-
+                                        new AlertDialog.Builder(SendLogsToGoogleDriveActivity.this)
+                                                .setTitle("Huomio!")
+                                                .setMessage("Haluatko varmasti poistaa tiedoston?")
+                                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        // Continue with delete operation
+                                                        //Log.d("Delete file painettu", "Deleteeee: " + clickedFile);
+                                                        clickedFile.delete();
+                                                        queryLogsFile();
+                                                    }
+                                                })
+                                                .setNegativeButton(android.R.string.no, null)
+                                                .setIcon(android.R.drawable.ic_dialog_alert)
+                                                .show();
                                         break;
                                 }
                             }

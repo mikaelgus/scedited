@@ -28,22 +28,10 @@
             android:name=".section_01_movesense.tests.LedTestActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".section_01_movesense.tests.LinearAccelerationTestActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".section_01_movesense.tests.HeartRateTestActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".section_01_movesense.tests.TemperatureTestActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".section_01_movesense.tests.MagneticFieldTestActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".section_01_movesense.tests.AngularVelocityActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".section_01_movesense.tests.MultiSubscribeActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".google_drive.SendLogsToGoogleDriveActivity"

@@ -13,8 +13,6 @@ import com.movesense.showcaseapp.BuildConfig;
 import com.movesense.showcaseapp.R;
 import com.movesense.showcaseapp.google_drive.SendLogsToGoogleDriveActivity;
 import com.movesense.showcaseapp.section_01_movesense.MovesenseActivity;
-import com.movesense.showcaseapp.section_02_multi_connection.connection.MultiConnectionActivity;
-import com.movesense.showcaseapp.section_03_dfu.DfuActivity2;
 import com.movesense.showcaseapp.section_07_instructions.InstructionsActivity;
 import com.movesense.showcaseapp.section_08_info.InfoActivity;
 
