@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -17,6 +19,9 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.movesense.showcaseapp.R;
+import com.movesense.showcaseapp.google_drive.SendLogsToGoogleDriveActivity;
+import com.movesense.showcaseapp.section_00_mainView.MainViewActivity;
+import com.movesense.showcaseapp.section_08_info.InfoActivity;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -35,6 +40,7 @@ public class MPchart extends AppCompatActivity {
         private HorizontalBarChart horizontalBarChart;
         ArrayList angularArrayList1, angularArrayList2, angularArrayList3;
         public TextView textCounter, textAHI, textResult, textNotMedical;
+        public ImageView backButton;
     int count = 0;
     float lastMilSecValue = 0;
     @Override
@@ -52,6 +58,9 @@ public class MPchart extends AppCompatActivity {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+        backButton = (ImageView) findViewById(R.id.results_back_button);
+        backButton.setOnClickListener(this::onClick);
 
         textCounter = (TextView) findViewById(R.id.textViewCounter);
         textAHI = (TextView) findViewById(R.id.textViewAHI);
@@ -235,5 +244,13 @@ public class MPchart extends AppCompatActivity {
             textNotMedical.setText("(Tulos on viitteellinen.)");
         }
 
+    }
+
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.results_back_button:
+                startActivity(new Intent(MPchart.this, SendLogsToGoogleDriveActivity.class));
+                break;
+        }
     }
 }

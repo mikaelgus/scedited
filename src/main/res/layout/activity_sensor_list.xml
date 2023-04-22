@@ -4,10 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="#1D8CC6D8"
     android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".section_01_movesense.sensors.sensors_list.SensorListActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/saved_data_back_button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="backbutton"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Käynnistä mittaus"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!--
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,7 +54,7 @@
             android:layout_below="@id/sensorList_deviceInfo_title_tv"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="4dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             tools:text="Serial: 21512521"/>
 
         <TextView
@@ -39,7 +64,7 @@
             android:layout_below="@id/sensorList_deviceInfo_serial_tv"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="4dp"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             tools:text="Sw version: 0.10"/>
 
         <View
@@ -48,11 +73,12 @@
             android:layout_below="@id/sensorList_deviceInfo_sw_tv"
             android:layout_marginTop="4dp"
             android:background="@android:color/white"/>
-    </RelativeLayout>
+    </RelativeLayout>-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/sensorList_recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
 
 </LinearLayout>

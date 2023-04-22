@@ -1,120 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              android:padding="6dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#5B8CC6D8"
+    android:orientation="vertical"
+    android:padding="8dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="@string/test_angular_velocity"
-            android:textSize="18sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="4dp">
-
-        <TextView
-            android:id="@+id/connected_device_name_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            tools:text="Serial: E5:92:291:30:21"/>
-
-        <TextView
-            android:id="@+id/connected_device_swVersion_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            tools:text="Sw version: 0.10"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="14dp"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switchSubscription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/measurement_back_button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="backbutton"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/subscribe"/>
+            android:layout_centerInParent="true"
+            android:text="Suorita mittaus"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/rate"/>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/note_text"/>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_marginTop="10dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_margin="10dp">
 
-        <TextView
-            android:id="@+id/x_axis_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/x"
-            android:textSize="16sp"/>
+        <!--https://www.flaticon.com/free-icons/smartwatch Smartwatch icons created by srip - Flaticon-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="20dp"
+            android:padding="20dp"
+            android:src="@drawable/connect"/>
 
-        <TextView
-            android:id="@+id/y_axis_textView"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/y"
-            android:textSize="16sp"/>
+            android:padding="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_rounded_background"
+            android:elevation="10dp">
 
-        <TextView
-            android:id="@+id/z_axis_textView"
-            android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Käynnistä tai pysäytä mittaus"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/connected_device_name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    tools:text="Serial: E5:92:291:30:21"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/connected_device_swVersion_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    tools:text="Sw version: 0.10"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchSubscription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textOn="ON"
+                    android:textOff="OFF"
+                    app:showText="true"
+                    android:textColor="@android:color/black"
+                    android:thumb="@drawable/thumb1"
+                    app:track="@drawable/track"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Käynnistä mittaus"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/rate"
+                android:visibility="gone"/>
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/note_text"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginTop="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/x_axis_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/x"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/y_axis_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/y"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/z_axis_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/z"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/angularVelocity_lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/z"
-            android:textSize="16sp"/>
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/white_rounded_background"
+            android:elevation="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Tarkista anturin akun tilanne"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/temperature_get_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/btn_get"
+                android:textStyle="bold"
+                android:background="@drawable/white_rounded_background"
+                android:backgroundTint="#FFA62B"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/value_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:textAlignment="center"
+                android:text="@string/battery_value"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/instructions_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            app:fabSize="normal"
+            android:backgroundTint="#82C0CC"
+            android:src="@drawable/baseline_question_mark_24"
+            android:elevation="10dp" />
 
     </LinearLayout>
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/angularVelocity_lineChart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </LinearLayout>

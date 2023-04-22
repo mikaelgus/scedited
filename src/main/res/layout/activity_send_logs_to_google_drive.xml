@@ -5,7 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#5B8CC6D8"
+    android:padding="8dp"
     tools:context="com.movesense.showcaseapp.google_drive.SendLogsToGoogleDriveActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/saved_data_back_button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="backbutton"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Suoritetut mittaukset"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:background="@drawable/white_rounded_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="5dp">
 
     <TextView
         android:id="@+id/resultTextView"
@@ -15,13 +50,15 @@
         android:layout_margin="15dp"
         android:text="Suoritetut mittaukset"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:visibility="gone"/>
 
     <ListView
         android:id="@+id/logsFileListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp" />
+        android:layout_margin="10dp" />
+
+    </LinearLayout>
 
 </LinearLayout>

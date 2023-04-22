@@ -21,10 +21,10 @@ public enum  ConnectionLostDialog {
         if (mAlertDialog == null) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context)
                     .setCancelable(false)
-                    .setTitle("Connection Lost")
-                    .setMessage("Appliaction will connect automatically with Movesense device" +
-                            " when it will be available.")
-                    .setPositiveButton("Connect with other Movesense", new DialogInterface.OnClickListener() {
+                    .setTitle("Yhteys katkesi")
+                    .setMessage("Sovellus muodostaa yhteyden automaattisesti Movesense-laitteeseen" +
+                            ", kun anturi on jälleen saatavilla.")
+                    .setPositiveButton("Yhdistä toiseen Movesenseen", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             BleManager.INSTANCE.isReconnectToLastConnectedDeviceEnable = false;

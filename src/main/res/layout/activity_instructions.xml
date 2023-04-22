@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#5B8CC6D8"
+    android:padding="8dp"
+    tools:context=".section_07_instructions.InstructionsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/instructions_back_button"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:contentDescription="backbutton"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/Ohjeet"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
+
+            <!--Ohjeet-->
+            <LinearLayout
+                android:background="@drawable/white_rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kuinka yhdistää anturi ja suorittaa mittaus?"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:text="1. Yhdistä MoveSense-anturi sovellukseen:"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="- Aseta älylaitteen Bluetooth-yhteys päälle.
+                    \n\n- Paina sovelluksen etusivulta Yhdistä anturi-painiketta.
+                    \n\n- Käynnistä MoveSense-anturi koskettamalla takaosan liitäntänappeja peukaloilla. Käynnissä olevan anturin etuosassa vilkkuu punainen led-valo.
+                    \n\n- Yhdistyksen onnistuessa anturi ja sen tunnusnumero ilmestyy näytölle, jonka jälkeen tätä painamalla anturi yhdistyy sovellukseen. Sovellus siirtyy sivulle, jossa voidaan käynnistää mittaus ja tarkistaa anturin akun tilanne."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:text="2. Aseta Movesense anturi mittauspaikalle:"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="- Varmista että anturi on käynnissä. Käynnissä olevan anturin etuosassa vilkkuu punainen led-valo.
+                    \n\n- Yhdistä anturi liitäntänapeista sykevyöhön alla olevan kuvan mukaisesti."/>
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/anturinkiinnitys"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="-Säädä sykevyön pituutta tarpeen mukaan siten, että vyö pysyy tiukasti paikallaan rintakehälle asetettuna.
+                    \n\n- Paremman tuloksen saamiseksi kostuta sykevyön takana olevat elektrodialueet vedellä."/>
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/anturinkastelu"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="- Aseta sykevyö päällesi paljaalle iholle rintakehän kohdalle kuvan mukaisesti siten, että logon M-kirjain on oikein päin."/>
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/anturinasettaminen"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:text="3. Aloita mittaus:"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="- Kun anturi on kytketty päälle ja yhdistetty älylaitteeseen, sovellus siirtyy Käynnistä mittaus-sivulle.
+                    \n\n - Mittaus käynnistyy painamalla Käynnistä mittaus-painikkeen ON-asentoon.
+                    \n\n - Suorita mittaus yön ajalta ja aamulla herättyäsi sammuta mittaus painamalla Käynnistä mittaus-painike OFF-asentoon.
+                    \n\n - Mittauksen aikana havaitaan yön aikana tapahtuneet mahdolliset matalat hengitysjaksot ja sovellus kertoo viitteellisen tuloksen, onko aihetta epäillä sentraalista uniapneaa. "/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:text="4. Tarkastele tuloksia:"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="- Aikaisempia mittauksia voit tarkastella painamalla etusivun Mittaustulokset -painikkeesta. Kaikki tulokset avautuvat listana, ja painamalla yksittäistä mittausta avautuu mittauksen tarkemmat tiedot.
+                    \n\n - Pystyt avaamaan mittauksen tiedot Avaa tiedosto-kohdasta, poistamaan yksittäisen mittauksen Poista tiedosto-kohdasta tai lähettämään mittauksen Google Driveen Lähetä tiedosto Google Driveen-kohdasta.
+                    \n\n - Avattua yksittäisen mittauksen tiedot sovellus antaa viitteellisen arvion sentraalisen uniapnean epäilystä ja näyttää visuaalista mittausdataa hengitysliikkeestä ja mahdollisista hengityskatkoista. "/>
+
+            </LinearLayout>
+
+            <!--Yleisiä ohjeita-->
+            <LinearLayout
+                android:background="@drawable/white_rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_marginTop="20dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="Yleisiä ohjeita"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="1. Jos anturia ei havaita: Varmista, että olet riittävän lähellä laitetta ja älylaitteen Bluetooth -yhteys on päällä."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black"
+                    android:text="2. Jos anturi ei lähetä mittaustietoja: Varmista, että elektrodialueet ovat kosteat ja anturin logo on oikein päin.
+Säädä vyötä niin, että se istuu tiukemmin rintakehää vasten. Varmista, että älylaitteesi Bluetooth on päällä. Vaihda anturin paristot ja yhdistä anturi uudelleen."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="3. Jos anturi näyttää lähettävän vääriä tietoja: Varmista, että anturi on kunnolla kiinni sykevyössä ja vyö on tarpeeksi tiukalla. Yhdistä anturi uudelleen älylaitteen kanssa. Pese sykevyö tai vaiha uuteen."/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="4. Vikatilanteessa ota yhteys asiakaspalveluun."/>
+
+            </LinearLayout>
+
+            <!--Lisätietoa uniapneasta-->
+            <LinearLayout
+                android:background="@drawable/white_rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="@string/uniapnea"
+                    android:textStyle="bold"
+                    android:textSize="18sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/instructions_info_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/infoicon"
+                        android:src="@drawable/baseline_info_24"
+                        android:padding="12dp"/>
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/lis_tietoa_uniapneasta"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:layout_toEndOf="@id/infoicon"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/baseline_arrow_forward_24"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

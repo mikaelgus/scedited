@@ -26,6 +26,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -51,6 +52,8 @@ import com.google.api.services.drive.model.FileList;
 import com.movesense.showcaseapp.BuildConfig;
 import com.movesense.showcaseapp.R;
 import com.movesense.showcaseapp.logs.LogsListAdapter;
+import com.movesense.showcaseapp.section_00_mainView.MainViewActivity;
+import com.movesense.showcaseapp.section_01_movesense.MovesenseActivity;
 import com.movesense.showcaseapp.testfolder.MPchart;
 
 import java.io.File;
@@ -62,6 +65,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.OnItemClick;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
@@ -69,6 +73,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class SendLogsToGoogleDriveActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
         EasyPermissions.PermissionCallbacks {
 
+    @BindView(R.id.saved_data_back_button) ImageView savedDataButton;
     @BindView(R.id.resultTextView) TextView resultTextView;
     @BindView(R.id.logsFileListView) ListView logsFileListView;
 
@@ -97,9 +102,9 @@ public class SendLogsToGoogleDriveActivity extends AppCompatActivity implements 
         setContentView(R.layout.activity_send_logs_to_google_drive);
         ButterKnife.bind(this);
 
-        if (getSupportActionBar() != null) {
+        /*if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Saved Data");
-        }
+        }*/
 
         mProgress = new ProgressDialog(this);
         mProgress.setMessage("Calling Drive API ...");
@@ -134,7 +139,6 @@ public class SendLogsToGoogleDriveActivity extends AppCompatActivity implements 
                     logsFileList.add(file);
                     Log.e(LOG_TAG, "Query File: " + file.getName());
                 }
-
                 logsFileAdapter.notifyDataSetChanged();
             } else {
                 Log.e(LOG_TAG, "Query file failed. File[] = null");
@@ -204,6 +208,15 @@ public class SendLogsToGoogleDriveActivity extends AppCompatActivity implements 
                         })
                 .show();
 
+    }
+
+    @OnClick({R.id.saved_data_back_button})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.saved_data_back_button:
+                startActivity(new Intent(SendLogsToGoogleDriveActivity.this, MainViewActivity.class));
+                break;
+        }
     }
 
     private String getMimeType(String url) {
