@@ -48,9 +48,9 @@ public class LogsListAdapter extends BaseAdapter {
         File fileItem = (File) getItem(position);
         String name = fileItem.getName();
         //textView.setText(fileItem.getName());
-        String day = name.substring(8, 10);
-        String month = name.substring(5, 7);
-        String year = name.substring(0, 4);
+        String day = name.substring(0, 2);
+        String month = name.substring(3, 5);
+        String year = name.substring(6, 10);
         String hours = name.substring(11, 13);
         String minutes = name.substring(14, 16);
         textView.setText(day + "." + month + "." + year + " klo " + hours + ":" + minutes);
