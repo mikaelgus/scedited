@@ -56,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/uniapnea"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -64,48 +64,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textColor="@android:color/black"
-                    android:text="Tietoatietoatietoa....."/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:background="@drawable/white_rounded_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:layout_margin="5dp"
-                android:elevation="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sentraalinen_uniapnea"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:text="Uniapnea on sairaus, joka aiheuttaa toistuvia unenaikaisia hengityskatkoksia. Näiden hengityskatkosten johdosta elimistön hapensaanti häiriintyy. Uniapneaa on olemassa kolmea eri tyyppiä, joissa hengityskatkokset johtuvat eri tekijöistä. "/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:textColor="@android:color/black"
-                    android:text="Tietoatietoatietoa....."/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:background="@drawable/white_rounded_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:layout_margin="5dp"
-                android:elevation="5dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:text="@string/obstruktiivinen_uniapnea"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
@@ -116,7 +80,120 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textColor="@android:color/black"
-                    android:text="Tietoatietoatietoa....."/>
+                    android:text="Obstruktiivisessa uniapneassa unen aikana rentoutuvat ylähengitysteiden lihakset aiheuttavat hengityskatkoksen. Obstruktiivisessa uniapneassa hengitysliikkeet kuitenkin jatkuvat hengityskatkoksesta huolimatta.  "/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/sentraalinen_uniapnea"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="Sentraalisessa uniapneassa hengitysliikkeet lakkaavat keskushermostoperäisen hengityskatkoksen aikana.  "/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Sekamuotoinen uniapnea"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="Sekamuotoisessa uniapneassa yhdistyy obstruktiivisen ja sentraalisen uniapnean piirteitä.  "/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/white_rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_margin="5dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Oireet"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="Uniapnean yleisimmät oireet, joita ilmenee suurimmalla osalla uniapnea potilaista, ovat äänekäs ja katkeileva kuorsaus sekä unenaikaiset hengityskatkokset. Koska hengityskatkokset päättyvät yleensä nukkujan havahtumiseen, johtaa uniapnea katkonaisiin yöuniin. Tämä aiheuttaa monille päiväaikaista väsymystä, josta voi seurata myös pakonomaista nukahtamistaipumusta.
+                    \n\nMuita yleisiä päiväaikaisia oireita uniapneassa ovat muun muassa aamuisin ilmenevä päänsärky, muisti- ja mielialahäiriöt, keskittymisvaikeudet sekä impotenssi. Yön aikana voi uniapnean seurauksena esiintyä myös lisääntynyttä virtsaamisen tarvetta, hikoilua sekä suun kuivuutta. Oireet ovat pitkälti samanlaisia kaikissa eri tyypeissä."/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/white_rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_margin="5dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Diagnostiset kriteerit"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="Apnea eli hengityskatko havaitaan rekisteröinnissä, kun hengityksen ilmavirtaus vähenee vähintään 90 % minimissään kymmenen sekunnin ajan. Hypopneassa hengityksen ilmavirtaus vähenee vähintään 30 % minimissään kymmenen sekunnin ajan ja siihen liittyy joko vähintään 3 %:n alenema valtimoveren happipitoisuudessa tai herääminen unesta.
+                    \n\nUnirekisteröinnillä määritellään potilaan AHI (apnea-hypopnea indeksi), joka tarkoittaa keskimääräistä hengitystapahtumien määrää tunnissa rekisteröinnin aikana.
+                    \n\nNormaali lukema AH-indeksissä on alle 5 apneaa tai hypopneaa tunnissa. 5–14 hengitystapahtumaa tunnissa merkitsee indeksin mukaan lievää uniapneaa, 15–29 keskivaikeaa ja yli 30 vaikeaa uniapneaa."/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/white_rounded_background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_margin="5dp"
+                android:elevation="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Altistavat tekijät ja esiintyvyys"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@android:color/black"
+                    android:text="Sentraalinen uniapnea on yleistä sydän- ja verisuonitauteja, kuten sydämen vajaatoimintaa, eteisvärinää ja aivohalvauksia sairastavilla henkilöillä. Myös tietyt lääkkeet, kuten opiaatit ja natriumoksibatoni voivat aiheuttaa sentraalista uniapneaa. Lisäksi munuaisten vajaatoiminta, akromegalia sekä tyypin 1 ja 2 diabetes voivat altistaa sentraaliselle uniapnealle. Samoin pitkälle edenneessä keuhkosairaudessa ja neuromuskulaarisairauksissa voi esiintyä sentraalista uniapneaa ja hypoventilaatiota."/>
 
             </LinearLayout>
 
