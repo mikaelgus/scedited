@@ -47,6 +47,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <!--Ohjeet-nappi-->
             <LinearLayout
                 android:id="@+id/mainView_instructions"
@@ -68,7 +69,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="-20dp"
                     android:layout_marginBottom="0dp"
                     android:orientation="vertical"
@@ -87,13 +88,14 @@
                         android:textColor="@android:color/black"
                         android:layout_marginBottom="5dp"/>
 
+                    <!--
                     <TextView
                         android:id="@+id/instructions_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/instructions"
                         android:text="Kuinka yhdistää Movesense-anturi ja suorittaa mittaus?"
-                        android:textColor="@android:color/black"/>
+                        android:textColor="@android:color/black"/>-->
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -127,7 +129,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="-20dp"
                     android:layout_marginBottom="0dp"
                     android:orientation="vertical"
@@ -146,13 +148,14 @@
                         android:textColor="@android:color/black"
                         android:layout_marginBottom="5dp"/>
 
+                    <!--
                     <TextView
                         android:id="@+id/connect_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/connect"
                         android:text="Yhdistä Movesense-anturi mobiililaitteeseesi ja mittaa yön yli."
-                        android:textColor="@android:color/black"/>
+                        android:textColor="@android:color/black"/>-->
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -186,7 +189,7 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="80dp"
                     android:layout_marginLeft="-20dp"
                     android:layout_marginBottom="0dp"
                     android:orientation="vertical"
@@ -205,13 +208,14 @@
                         android:textColor="@android:color/black"
                         android:layout_marginBottom="5dp"/>
 
+                    <!--
                     <TextView
                         android:id="@+id/results_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/results"
                         android:text="Tarkastele aiempia mittaustuloksiasi."
-                        android:textColor="@android:color/black"/>
+                        android:textColor="@android:color/black"/>-->
 
                     <ImageView
                         android:layout_width="wrap_content"
