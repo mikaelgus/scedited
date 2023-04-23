@@ -26,14 +26,14 @@ public class MainViewActivity extends AppCompatActivity {
 
     @BindView(R.id.mainView_info_button) ImageView mMainViewInfo;
 
-    @BindView(R.id.mainView_movesense_Ll) LinearLayout mMainViewMovesenseLl;
+    @BindView(R.id.mainView_movesense_Ll) RelativeLayout mMainViewMovesenseLl;
 
     //@BindView(R.id.mainView_multiConnection_Ll) RelativeLayout mMainViewMultiConnectionLl;
 
-    @BindView(R.id.mainView_instructions) LinearLayout mMainViewInstructions;
+    @BindView(R.id.mainView_instructions) RelativeLayout mMainViewInstructions;
 
     //@BindView(R.id.mainView_dfu_Ll) RelativeLayout mMainViewDfuLl;
-    @BindView(R.id.mainView_savedData_Ll) LinearLayout mMainViewSavedDataLl;
+    @BindView(R.id.mainView_savedData_Ll) RelativeLayout mMainViewSavedDataLl;
     //@BindView(R.id.mainView_appVersion_tv) TextView mMainViewAppVersionTv;
     //@BindView(R.id.mainView_libraryVersion_tv) TextView mMainViewLibraryVersionTv;
 
