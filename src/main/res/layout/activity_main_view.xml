@@ -74,7 +74,7 @@
                     android:gravity="center"
                     android:padding="6dp"
                     android:text="@string/Ohjeet"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="19sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -109,7 +109,7 @@
                     android:gravity="center"
                     android:padding="6dp"
                     android:text="Yhdistä anturi ja aloita mittaus"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="19sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -141,7 +141,7 @@
                     android:gravity="center"
                     android:padding="6dp"
                     android:text="@string/mittaustulokset"
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:textSize="19sp"
                     android:textStyle="bold" />
             </RelativeLayout>
